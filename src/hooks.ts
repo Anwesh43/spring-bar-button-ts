@@ -47,7 +47,7 @@ export const useDimension = () => {
 }
 
 const maxScale = (scale : number, i : number, n : number) : number => Math.max(0, scale - i / n)
-const divideScale = (scale : number, i : number, n : number) : number => Math.min(1 / n, maxScale(scale, i, ,n)) * n 
+const divideScale = (scale : number, i : number, n : number) : number => Math.min(1 / n, maxScale(scale, i, n)) * n 
 const sinify = (scale : number) : number => Math.sin(scale * Math.PI)
 
 export const useStyle = (w : number, h : number, scale : number) => {
@@ -61,7 +61,7 @@ export const useStyle = (w : number, h : number, scale : number) => {
     return {
         squareStyle() : CSSProperties {
             const left : string = `${w / 2 - size / 2}px`
-            const top : string = `${h / 2 - size / 2 + (size - lineHeight)}px`
+            const top : string = `${h / 2 - size / 2 + (size - lineHeight) * sf2}px`
             const width : string = `${size}px`
             const height : string = `${size - (size - lineHeight) * sf2}px`
             return {

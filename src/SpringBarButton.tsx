@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStyle } from './hooks'
+import withContext from './withContext'
 
 interface SBBProps {
     w : number,
@@ -17,4 +18,4 @@ const SpringBarButton = (props : SBBProps) => {
     )
 }
 
-export default SpringBarButton 
+export default withContext(SpringBarButton)
